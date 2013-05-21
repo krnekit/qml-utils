@@ -49,7 +49,7 @@ function parseParams(url) {
     }
 
     var result = {}
-    var queries = url.replace(/.*[?#]/, '').replace('+', '%20').split(/[&;]/)
+    var queries = url.replace(/[?#]/g, '&').replace(/^[^&]*?&/, '').replace(/[+]/g, '%20').split(/[&;]/)
     for (var i = 0; i < queries.length; i++) {
         var params = queries[i].split('=')
         result[decodeURIComponent(params[0])] = decodeURIComponent(params[1])
