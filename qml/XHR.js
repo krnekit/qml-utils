@@ -17,8 +17,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-.pragma library
-
 function sendXHR(method, url, callback, data, contentType) {
     if (!method || !url) {
         return null
