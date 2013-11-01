@@ -23,7 +23,7 @@ function sendXHR(method, url, callback, data, contentType) {
     }
 
     var request = new XMLHttpRequest()
-    var requestUrl = (method === 'GET' ? '%1?%2'.arg(url).arg(data) : url)
+    var requestUrl = (method === 'GET' ? '%1%2'.arg(url).arg(data ? "?%1".arg(data) : "") : url)
     request.open(method, requestUrl)
     request.onreadystatechange = function() {
         if (request.readyState === XMLHttpRequest.DONE) {
